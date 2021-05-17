@@ -28,7 +28,9 @@ class HornedBeast extends React.Component {
                         <Card.Title>{this.props.titel}</Card.Title>
                         <Card.Text>
                             {this.props.description}
-                           <p>🎠 Number Of Horne: {this.state.numberOfClick}</p> 
+                            </Card.Text>
+                            <Card.Text>
+                           🎠 Number Of Horne: {this.state.numberOfClick}
                         </Card.Text>
                         <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
                     </Card.Body>
@@ -41,9 +43,4 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
-
-{/* <h2>{this.props.titel}</h2>
-                <img src={this.props.imageUrl} alt={this.props.titel} titel={this.props.titel} width="500px" />
-                <p>{this.props.description}</p> */}
-
                 
