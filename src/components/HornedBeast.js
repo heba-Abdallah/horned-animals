@@ -17,27 +17,27 @@ class HornedBeast extends React.Component {
             numberOfClick: this.state.numberOfClick + 1,
         })
     }
-    sendInfo=() =>{
+    sendInfo = () => {
         this.props.showStuff(this.props.titel);
     }
     render() {
 
         return (
             <div>
-                <Card style={{ width: '18rem' }} >
-                    <Card.Img variant="top" src={this.props.imageUrl} onClick={this.sendInfo} />
-                    <Card.Body >
-                        <Card.Title>{this.props.titel}</Card.Title>
-                        <Card.Text>
-                            {this.props.description}
+                
+                    <Card border="warning" style={{ width: '18rem' }} >
+                        <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.titel} title={this.props.titel} onClick={this.sendInfo} />
+                        <Card.Body >
+                            <Card.Title>{this.props.titel}</Card.Title>
+                            <Card.Text>
+                                {this.props.description}
                             </Card.Text>
                             <Card.Text>
-                           🎠 Number Of Horne: {this.state.numberOfClick}
-                        </Card.Text>
-                        <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
-                    </Card.Body>
-                </Card>
-
+                                🐾 Number Of Horne: {this.state.numberOfClick}
+                            </Card.Text>
+                            <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
+                        </Card.Body>
+                    </Card>
 
             </div>
         )
@@ -45,9 +45,3 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
-
-{/* <h2>{this.props.titel}</h2>
-                <img src={this.props.imageUrl} alt={this.props.titel} titel={this.props.titel} width="500px" />
-                <p>{this.props.description}</p> */}
-
-                

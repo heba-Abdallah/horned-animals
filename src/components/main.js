@@ -11,17 +11,16 @@ class Main extends React.Component {
             <>
                 <CardColumns>
                     {this.props.beastInfo.map((item, index) => {
-                        return (
-                            <HornedBeast
-                                titel={item.title}
-                                imageUrl={item.image_url}
-                                description={item.description}
-                                key={index}
-                                showStuff={this.props.showStuff}
-                            />
-                        )
+                        return <HornedBeast
+                            titel={item.title}
+                            imageUrl={item.image_url}
+                            description={item.description}
+                            key={index}
+                            showStuff={this.props.showStuff}
+                        />
+
                     })}
-                    </CardColumns>
+               </CardColumns>
             </>
         )
     }
