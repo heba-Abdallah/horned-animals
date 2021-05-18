@@ -45,9 +45,4 @@ class HornedBeast extends React.Component {
 }
 
 export default HornedBeast;
-
-{/* <h2>{this.props.titel}</h2>
-                <img src={this.props.imageUrl} alt={this.props.titel} titel={this.props.titel} width="500px" />
-                <p>{this.props.description}</p> */}
-
                 

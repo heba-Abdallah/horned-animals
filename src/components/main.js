@@ -22,6 +22,17 @@ class Main extends React.Component {
                         )
                     })}
                     </CardColumns>
+=======
+                {hornedData.map((item, index) => {
+                    return (
+                        <HornedBeast
+                            key={index}
+                            titel={item.title}
+                            imageUrl={item.image_url}
+                            description={item.description} />
+                    )
+                })}
+
             </>
         )
     }
