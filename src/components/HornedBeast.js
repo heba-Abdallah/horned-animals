@@ -44,4 +44,9 @@ class HornedBeast extends React.Component {
     }
 }
 
+<<<<<<< HEAD
 export default HornedBeast;
+=======
+export default HornedBeast;
+                
+>>>>>>> 35310132a42a620a6ecb5aa6b402e6b715318059
