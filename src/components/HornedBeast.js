@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 
@@ -18,15 +19,13 @@ class HornedBeast extends React.Component {
     }
     sendInfo = () => {
         this.props.showStuff(this.props.titel);
-       
     }
     render() {
 
         return (
             <div>
                 
-                   
-                        <Card border="warning" style={{ width: '18rem' }} >
+                    <Card border="warning" style={{ width: '18rem' }} >
                         <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.titel} title={this.props.titel} onClick={this.sendInfo} />
                         <Card.Body >
                             <Card.Title>{this.props.titel}</Card.Title>
@@ -38,13 +37,16 @@ class HornedBeast extends React.Component {
                             </Card.Text>
                             <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
                         </Card.Body>
-                        </Card>
-                  
+                    </Card>
 
             </div>
         )
     }
 }
 
+<<<<<<< HEAD
 export default HornedBeast;
-
+=======
+export default HornedBeast;
+                
+>>>>>>> 35310132a42a620a6ecb5aa6b402e6b715318059
