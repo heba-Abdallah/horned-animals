@@ -17,36 +17,32 @@ class HornedBeast extends React.Component {
             numberOfClick: this.state.numberOfClick + 1,
         })
     }
-    sendInfo = () => {
+    sendInfo=() =>{
         this.props.showStuff(this.props.titel);
     }
     render() {
 
         return (
             <div>
-                
-                    <Card border="warning" style={{ width: '18rem' }} >
-                        <Card.Img variant="top" src={this.props.imageUrl} alt={this.props.titel} title={this.props.titel} onClick={this.sendInfo} />
-                        <Card.Body >
-                            <Card.Title>{this.props.titel}</Card.Title>
-                            <Card.Text>
-                                {this.props.description}
+                <Card style={{ width: '18rem' }} >
+                    <Card.Img variant="top" src={this.props.imageUrl} onClick={this.sendInfo} />
+                    <Card.Body >
+                        <Card.Title>{this.props.titel}</Card.Title>
+                        <Card.Text>
+                            {this.props.description}
                             </Card.Text>
                             <Card.Text>
-                                🐾 Number Of Horne: {this.state.numberOfClick}
-                            </Card.Text>
-                            <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
-                        </Card.Body>
-                    </Card>
+                           🎠 Number Of Horne: {this.state.numberOfClick}
+                        </Card.Text>
+                        <Button onClick={this.increaseNum} variant="warning" size="lg" block>vote</Button>
+                    </Card.Body>
+                </Card>
+
 
             </div>
         )
     }
 }
 
-<<<<<<< HEAD
-export default HornedBeast;
-=======
 export default HornedBeast;
                 
->>>>>>> 35310132a42a620a6ecb5aa6b402e6b715318059
