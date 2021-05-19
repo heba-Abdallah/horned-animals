@@ -4,6 +4,8 @@ import Header from './components/header';
 import Main from './components/main';
 import SelectedBeast from './components/SelectedBeast';
 import hornedData from './components/HornedData.json';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -31,6 +33,12 @@ class App extends React.Component {
       show: false,
     })
   }
+
+  showFilteredData= (newHorens)=>{
+    this.setState({
+      hornedData: newHorens,
+    })
+  }
   render() {
     return (
       <div>
@@ -43,6 +51,8 @@ class App extends React.Component {
         < Main
           beastInfo={this.state.dataArr}
           showStuff={this.showStuff}
+          showFilteredData={this.newHorens}
+          
         />
         <Footer />
       </div>

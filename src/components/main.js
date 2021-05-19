@@ -1,72 +1,76 @@
-<<<<<<< HEAD
-
 import React from 'react';
-import { CardColumns } from 'react-bootstrap';
 import HornedBeast from './HornedBeast';
-// import hornedData from './HornedData.json';
+import hornedData from './HornedData.json';
+import Form from 'react-bootstrap/Form'
+// import { CardColumns } from 'react-bootstrap';
+
 
 class Main extends React.Component {
 
-    render() {
-        return (
-            <>
-                <CardColumns>
-                    {this.props.beastInfo.map((item, index) => {
-                        return <HornedBeast
-                            titel={item.title}
-                            imageUrl={item.image_url}
-                            description={item.description}
-                            key={index}
-                            showStuff={this.props.showStuff}
-                        />
-
-                    })}
-               </CardColumns>
-            </>
-        )
+    constructor(props) {
+        super(props);
+        this.state = {
+            result: hornedData
+        }
     }
-}
 
-=======
+        updateNum = (event) => {
+            let numOfHornes = parseInt(event.target.value)
+            let allData = hornedData;
+            let result2;
+            if (numOfHornes) {
+                result2 = allData.filter((element) => {
+                    if (element.horns === numOfHornes) {
+                        return element;
+                    }
+                })
+            } else {
+                result2 = allData;
+            }
+            console.log('num', numOfHornes);
+            console.log('hi', allData);
+            console.log('heba', result2);
+            
+            this.setState({
+                result: result2
+            })
+        }
+        render() {
+            return (
+                <>
+                    <Form>
+                        <fieldset>
+                            <Form.Group controlId="exampleForm.SelectCustomHtmlSize">
+                                <Form.Label> number of horns</Form.Label>
+                                <br></br>
+                                <Form.Control as="select" custom name='numOfHornes' onChange={this.updateNum}>
+                                    <option value=''>ALL</option>
+                                    <option value='1'>ONE</option>
+                                    <option value='2'>TWO</option>
+                                    <option value='3'>THREE</option>
+                                    <option value='100'>ONE Hundred</option>
+                                </Form.Control>
+                            </Form.Group>
+                        </fieldset>
+                    </Form>
 
-import React from 'react';
-import { CardColumns } from 'react-bootstrap';
-import HornedBeast from './HornedBeast';
-// import hornedData from './HornedData.json';
-
-class Main extends React.Component {
-
-    render() {
-        return (
-            <>
-                <CardColumns>
-                    {this.props.beastInfo.map((item, index) => {
-                        return (
-                            <HornedBeast
+                    
+                        {this.state.result.map((item, index) => {
+                            return <HornedBeast
                                 titel={item.title}
                                 imageUrl={item.image_url}
                                 description={item.description}
                                 key={index}
                                 showStuff={this.props.showStuff}
+                                some={this.result}
+
                             />
-                        )
-                    })}
-                    </CardColumns>
-=======
-                {hornedData.map((item, index) => {
-                    return (
-                        <HornedBeast
-                            key={index}
-                            titel={item.title}
-                            imageUrl={item.image_url}
-                            description={item.description} />
-                    )
-                })}
 
-            </>
-        )
+                        })}
+                    
+                </>
+            )
+        }
     }
-}
 
->>>>>>> 35310132a42a620a6ecb5aa6b402e6b715318059
-export default Main;
+    export default Main;
